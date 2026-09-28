@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ofertă Stettler detaliată</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --ground:#F3F5F6; --paper:#FFFFFF; --ink:#15212B; --muted:#5B6873; --line:#D6DDE2;
+  --free:#1E7A46; --free-ink:#FFFFFF; --yellow:#E0B020;
+  --accent:#1B5FA8; --accent-soft:#E3EDF8; --ok:#1E7A46; --ok-soft:#E1F2E8;
+  --warn:#8A5A00; --warn-soft:#F7ECD2;
+  --display:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme:dark;
+    --free:#1F6B43; --free-ink:#F2FFF7; --yellow:#C9A227;
+    --ground:#0F151A; --paper:#172027; --ink:#E6ECF0; --muted:#9AA8B3; --line:#2B3843;
+    --accent:#7DB3EE; --accent-soft:#1B2E44; --ok:#6CCB94; --ok-soft:#163323;
+    --warn:#E8B85A; --warn-soft:#3A2E12;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;padding:0 16px}
+.wrap{max-width:980px;margin:0 auto;padding-block:48px 72px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* antet */
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;padding-bottom:28px;border-bottom:2px solid var(--ink)}
+.top h1{font-size:40px;font-weight:700;margin:10px 0 8px;max-width:620px}
+.top .lead{color:var(--muted);max-width:600px;font-size:16.5px}
+.meta{display:grid;gap:6px;font-size:13.5px;min-width:220px}
+.meta div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.meta b{font-weight:600}
+.client{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.client img{height:34px;width:auto;max-width:160px;background:#fff;padding:4px 8px;border-radius:4px}
+
+section{margin-top:52px}
+section > h2{font-size:28px;font-weight:700;margin-bottom:6px}
+section > .sub{color:var(--muted);margin-bottom:20px;max-width:680px}
+
+/* casete */
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.box h3{font-size:19px;margin-bottom:8px}
+.box ul{list-style:none;display:grid;gap:8px}
+.box li{padding-left:22px;position:relative}
+.box li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--muted)}
+.box.after li::before{background:var(--ok)}
+.box.after{border-color:var(--ok)}
+
+/* mini macheta */
+.mock{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.mock .bar{display:flex;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+.mock .bar .t{font-family:var(--display);font-weight:700;font-size:17px;white-space:nowrap}
+.mock .bar .s{flex:1;border:2px solid var(--line);border-radius:8px;padding:6px 10px;color:var(--muted);font-size:13.5px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.mock .body{display:grid;grid-template-columns:240px 1fr;min-height:210px}
+.mock .tree{border-right:1px solid var(--line);padding:10px;font-size:13.5px;display:grid;gap:4px;align-content:start}
+.mock .tree .c{font-weight:600}
+.mock .tree .a{padding-left:14px;font-family:var(--mono);font-size:12.5px}
+.mock .tree .a.sel{background:var(--accent-soft);border-radius:6px;padding:4px 8px 4px 14px}
+.mock .tree .d{margin-left:22px;border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:12.5px}
+.mock .tree .d.sel{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.mock .doc{padding:14px 16px}
+.mock .doc .head{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.pill{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.ro{border:1px solid var(--line);color:var(--muted)}
+.mock .page{border:1px solid var(--line);border-radius:4px;height:130px;background:repeating-linear-gradient(0deg,transparent 0 17px,var(--line) 17px 18px);opacity:.7}
+.cap{font-size:13px;color:var(--muted);margin-top:8px}
+
+/* faze */
+.phase{background:var(--paper);border:1px solid var(--line);border-radius:10px;margin-bottom:14px;overflow:hidden}
+.phase .ph{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.phase .n{font-family:var(--display);font-weight:700;font-size:30px;color:var(--accent);line-height:1}
+.phase h3{font-size:21px}
+.phase .what{color:var(--muted);font-size:14px;margin-top:2px}
+.phase .price{text-align:right;white-space:nowrap}
+.phase .price b{display:block;font-family:var(--display);font-size:26px;font-weight:700}
+.phase .price span{font-size:12.5px;color:var(--muted)}
+.phase .price .ab{display:grid;grid-template-columns:auto auto;gap:0 10px;align-items:baseline;justify-content:end}
+.phase .price .ab b{font-size:22px}
+.phase .price .ab i{font-style:normal;font-size:12px;font-weight:600;color:var(--accent)}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:9px 20px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.h{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--muted);width:110px}
+.tag{display:inline-block;font-size:11px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:0 6px;margin-left:4px}
+
+/* variante */
+.variants{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vcard{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.vcard .vh{display:flex;align-items:baseline;gap:10px}
+.vcard .letter{font-family:var(--display);font-weight:700;font-size:34px;color:var(--accent);line-height:1}
+.vcard h3{font-size:21px}
+.vcard dl{display:grid;gap:10px}
+.vcard dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.vcard dd{margin-top:2px}
+.vcard .foot{margin-top:auto;border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.vcard .foot b{font-family:var(--display);font-size:26px}
+.vcard .foot span{font-size:13px;color:var(--muted)}
+
+/* total */
+.total{background:var(--paper);border:2px solid var(--ink);border-radius:10px;overflow:hidden}
+.total table td,.total table th{padding:11px 20px}
+.total th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:right}
+.total th .sm{display:none}
+.total th:first-child{text-align:left}
+.total td.v{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600}
+.total tr.tot td{border-top:2px solid var(--line);font-weight:600}
+.total tr.sum td{border-top:2px solid var(--ink);font-family:var(--display);font-size:22px;font-weight:700}
+.total tr.sum td.v{font-size:28px;color:var(--accent)}
+.solo{margin-top:14px;background:var(--paper);border:1px dashed var(--accent);border-radius:10px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.solo h3{font-size:19px;margin-bottom:4px}
+.solo p{color:var(--muted);font-size:14.5px;max-width:620px}
+.solo > b{font-family:var(--display);font-size:30px;color:var(--accent);white-space:nowrap}
+.short-steps{list-style:none;counter-reset:st -1;display:grid;gap:10px}
+.short-steps li{counter-increment:st;display:grid;grid-template-columns:auto 1fr;gap:2px 14px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.short-steps li::before{content:counter(st);grid-row:span 2;font-family:var(--display);font-weight:700;font-size:26px;color:var(--accent);line-height:1.1;min-width:18px}
+.short-steps li b{font-size:16px}
+.short-steps li span{color:var(--muted);font-size:14.5px}
+.vcard p{font-size:14.5px}
+.more{margin-top:40px;text-align:center}
+.more a{display:inline-block;border:2px solid var(--accent);color:var(--accent);border-radius:10px;padding:12px 22px;font-weight:600;text-decoration:none}
+.more a:hover{background:var(--accent-soft)}
+.more.top{margin:0 0 18px;text-align:left}
+.more.top a{border:0;padding:0;font-size:14px}
+.free{margin-top:36px;background:var(--free);color:var(--free-ink);border-radius:14px;padding:28px 30px;display:grid;gap:12px;box-shadow:0 14px 30px -18px rgba(0,0,0,.45)}
+.free-tag{justify-self:start;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.free h2{font-size:34px;color:var(--free-ink);margin:0}
+.free p{font-size:16.5px;max-width:680px}
+.free-steps{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.free-steps span{background:rgba(255,255,255,.16);border-radius:8px;padding:8px 12px;font-weight:600;font-size:14.5px}
+.short-steps li:first-child{border-color:var(--ok);background:var(--ok-soft)}
+.mvp{border:3px solid var(--ok)!important;background:var(--ok-soft)!important}
+.mvp .eyebrow{color:var(--ok);font-size:13px}
+.mvp-facts li{background:var(--paper)!important}
+.mvp-facts b{color:var(--ok)!important}
+.vcard .foot b.num{font-size:24px}
+.range{font-size:16.5px;margin:-4px 0 18px}
+.range b{color:var(--accent)}
+.factors{list-style:none;display:grid;gap:6px;margin:0 0 18px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 18px}
+.factors li{position:relative;padding-left:22px;font-size:14.5px}
+.factors li::before{content:"";position:absolute;left:4px;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+.ftbl{background:var(--paper);border:1px solid var(--line);border-radius:10px;margin-bottom:16px}
+.ftbl th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ftbl td:first-child{font-weight:600;white-space:nowrap}
+@media (max-width:760px){.solo{flex-direction:column;align-items:flex-start}}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.fact .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.fact .v{font-family:var(--display);font-size:22px;font-weight:700;margin-top:2px}
+
+/* calendar */
+.timeline{display:grid;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tl{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:12px 20px;border-bottom:1px solid var(--line)}
+.tl:last-child{border-bottom:0}
+.tl .w{font-weight:600;font-variant-numeric:tabular-nums}
+
+/* mentenanta */
+.care{display:grid;grid-template-columns:1fr 1.4fr;gap:16px}
+.care .alt{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+.care .alt b{color:var(--ink)}
+.care .price-tag{font-family:var(--display);font-size:30px;font-weight:700;color:var(--accent);line-height:1.1;margin:4px 0 6px}
+
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.note{background:var(--warn-soft);border:3px solid var(--yellow);border-radius:10px;padding:18px 22px;margin-top:16px}
+.note b{color:var(--warn)}
+
+footer{margin-top:56px;border-top:2px solid var(--ink);padding-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+footer b{color:var(--ink)}
+
+.mvp{background:var(--paper);border:2px solid var(--accent);border-radius:12px;padding:24px 26px;display:grid;gap:14px}
+.mvp h2{font-size:28px;margin-top:4px}
+.mvp h3{font-size:18px;margin-bottom:4px}
+.mvp-facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.mvp-facts li{background:var(--accent-soft);border-radius:8px;padding:8px 12px;font-size:14px}
+.mvp-facts b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.phase .ph{border-bottom:0}
+.phase ul.do{list-style:none;display:grid;gap:8px;border-top:1px solid var(--line);padding:14px 20px 16px}
+.phase ul.do li{position:relative;padding-left:24px;font-size:14.5px}
+.phase ul.do li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--accent);font-weight:700}
+@media (max-width:760px){
+  .free{padding:22px 18px}
+  .free h2{font-size:27px}
+  .top h1{font-size:31px}
+  .twocol,.lists,.facts,.variants,.care{grid-template-columns:1fr}
+  .mvp{padding:18px}
+  .mock .body{grid-template-columns:1fr}
+  .mock .tree{border-right:0;border-bottom:1px solid var(--line)}
+  .phase .ph{grid-template-columns:auto 1fr}
+  .phase .price{grid-column:1 / -1;text-align:left}
+  .phase .price .ab{justify-content:start}
+  .tl{grid-template-columns:1fr;gap:2px}
+  td,th{padding:9px 14px}
+  .total table td,.total table th{padding:10px 12px}
+  .total tr.sum td.v{font-size:19px;white-space:normal}
+  .total td.v{white-space:normal}
+  .total th .lg{display:none}
+  .total th .sm{display:inline}
+  .total table td,.total table th{padding:10px 8px}
+  .total table td:first-child,.total table th:first-child{padding-left:12px}
+  .total td.v,.total th:not(:first-child){width:62px;font-size:12.5px}
+  .total table td:first-child{font-size:13.5px}
+  .total tr.sum td.v{font-size:16px}
+  .ftbl td:first-child{white-space:normal}
+}
+@media print{
+  body{background:#fff;padding:0}
+  .wrap{padding-block:0}
+  .phase,.vcard,.box{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div>
+      <div class="client">
+        <img src="https://www.stettlertech.ro/wp-content/uploads/2024/03/Logo-1.png" alt="Stettler.Tech" onerror="this.remove()">
+      </div>
+      <div class="eyebrow">Ofertă de proiect · varianta detaliată</div>
+      <h1>Documentele de producție pe tableta operatorului</h1>
+      <p class="lead">Instrucțiunile de lucru, de verificare, de ambalare și desenele, găsite în câteva atingeri, mereu în revizia eliberată. Documentele rămân pe serverul firmei, fără să fie mutate sau șterse.</p>
+    </div>
+    <div class="meta">
+      <div><span class="muted">Pentru</span><b>Stettler Tech SRL, Bistrița</b></div>
+      <div><span class="muted">Pregătită de</span><b>Flavius Vranău</b></div>
+      <div><span class="muted">Data</span><b class="num">28.09.2026</b></div>
+      <div><span class="muted">Valabilă</span><b class="num">30 de zile</b></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Ce rezolvăm</h2>
+    <p class="sub">Pe scurt, ce ne-ați descris și ce se schimbă.</p>
+    <div class="twocol">
+      <div class="box">
+        <h3>Acum</h3>
+        <ul>
+          <li>Operatorii lucrează cu instrucțiuni printate, care trebuie schimbate la post la fiecare revizie.</li>
+          <li>Accesul direct pe server de pe tabletă merge, dar calea prin foldere e prea lungă pentru operator.</li>
+          <li>Structura de foldere a crescut în timp și nu e la fel peste tot.</li>
+          <li>Același document (de ex. o ambalare) poate fi valabil pentru mai multe articole.</li>
+        </ul>
+      </div>
+      <div class="box after">
+        <h3>După proiect</h3>
+        <ul>
+          <li>O singură structură de foldere, cu reguli clare de denumire și revizie.</li>
+          <li>Pe tabletă: client → articol → documente, plus căutare după număr de articol.</li>
+          <li>Operatorul vede doar revizia eliberată. Reviziile vechi rămân în arhivă, pentru trasabilitate.</li>
+          <li>Documentele comune apar automat la toate articolele la care se aplică.</li>
+          <li>Acces doar în citire, doar la documentele de producție, doar în rețeaua internă.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mock" aria-label="Schiță a ecranului de pe tabletă">
+      <div class="bar"><span class="t">Documente la post</span><span class="s">Caută număr articol, client sau document…</span></div>
+      <div class="body">
+        <div class="tree">
+          <div class="c">▾ Client A</div>
+          <div class="a sel">70-1234-01</div>
+          <div class="d sel">Instrucțiune de lucru</div>
+          <div class="d">Instrucțiune de verificare</div>
+          <div class="d">Instrucțiune de ambalare</div>
+          <div class="d">Desen</div>
+          <div class="a">70-1234-02</div>
+          <div class="c">▸ Client B</div>
+        </div>
+        <div class="doc">
+          <div class="head"><b>Client A › 70-1234-01 › Instrucțiune de lucru</b><span class="pill ok">Eliberat · Rev. C</span><span class="pill ro">Doar citire</span></div>
+          <div class="page"></div>
+        </div>
+      </div>
+    </div>
+    <p class="cap">Schiță orientativă. Denumirile și articolele sunt exemple.</p>
+  </section>
+
+  <section>
+    <div class="mvp">
+      <div class="mvp-head">
+        <span class="eyebrow">Primul pas · gratuit</span>
+        <h2>Prototip în 1 săptămână, înainte de orice angajament</h2>
+      </div>
+      <p>Ca să vedeți concret cum va funcționa aplicația, construiesc gratuit un <b>prototip (MVP)</b>, o versiune demonstrativă a aplicației, pe care v-o prezint într-o întâlnire scurtă.</p>
+      <div class="twocol">
+        <div>
+          <h3>Ce este un MVP</h3>
+          <p class="muted">O versiune simplificată a aplicației, care rulează pe o structură de foldere demonstrativă, construită după modelul organizării voastre, cu documente PDF de exemplu. Vedeți în browser navigarea în arbore, căutarea și afișarea documentelor, exact cum le va folosi operatorul.</p>
+        </div>
+        <div>
+          <h3>Ce nu este</h3>
+          <p class="muted">Nu e aplicația finală și nu folosește documentele voastre. Nu include reorganizarea folderelor, instalarea în infrastructura voastră și accesul de pe tablete, care fac parte din proiect.</p>
+        </div>
+      </div>
+      <ul class="mvp-facts">
+        <li><b>Durată</b> 1 săptămână</li>
+        <li><b>Cost</b> gratuit, fără obligații</li>
+        <li><b>De la voi</b> nimic: fără acces la date sau la infrastructură</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Unde rulează aplicația: două variante</h2>
+    <p class="sub">Aplicația rulează în rețeaua voastră, fără acces din internet. Tabletele văd doar aplicația, printr-o conexiune securizată, nu direct folderele de pe server. Varianta o stabilim împreună cu colegul de IT, după diagnostic.</p>
+    <div class="variants">
+      <div class="vcard">
+        <div class="vh"><span class="letter">A</span><h3>Pe NAS-ul existent</h3></div>
+        <dl>
+          <div><dt>Când se potrivește</dt><dd>Modelul NAS-ului permite rularea aplicației și are resurse suficiente, iar IT-ul e de acord.</dd></div>
+          <div><dt>Avantaje</dt><dd>Fără echipament nou. Aplicația stă chiar lângă documente.</dd></div>
+        </dl>
+        <div class="foot"><span>Total estimat</span><b class="num">3.500–3.700 €</b></div>
+      </div>
+      <div class="vcard">
+        <div class="vh"><span class="letter">B</span><h3>Pe un mini-PC dedicat</h3></div>
+        <dl>
+          <div><dt>Când se potrivește</dt><dd>NAS-ul nu permite rularea aplicației sau preferați să nu instalați nimic pe el.</dd></div>
+          <div><dt>Avantaje</dt><dd>NAS-ul rămâne neatins. Aplicația rulează pe un echipament dedicat, cu resursele ei.</dd></div>
+          <div><dt>Echipament potrivit</dt><dd>Mini-PC cu procesor Intel N100 sau echivalent, minimum 8 GB RAM (recomandat 16 GB), SSD de cel puțin 256 GB, conexiune de rețea prin cablu (Gigabit), potrivit pentru funcționare continuă. Valoare orientativă: aprox. 300–450 €, nu este inclusă în preț.</dd></div>
+          <div><dt>Ce include în plus</dt><dd>Pregătirea mini-PC-ului: instalarea sistemului de operare, actualizări automate, pornire automată și salvarea configurației.</dd></div>
+        </dl>
+        <div class="foot"><span>Total estimat</span><b class="num">3.800–4.100 €</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Etapele proiectului</h2>
+    <p class="sub">Fiecare etapă are un rezultat pe care îl vedeți și îl aprobați înainte de următoarea. Nimic nu se modifică pe server fără acordul vostru.</p>
+
+    <div class="phase">
+      <div class="ph">
+        <span class="n">1</span>
+        <div><h3>Diagnosticul folderelor</h3><div class="what">Analizăm toate folderele de proiect, doar în citire, și primiți un raport cu situația actuală: ce documente există, ce lipsește și ce trebuie ordonat.</div></div>
+      </div>
+      <ul class="do">
+        <li>Inventarul complet al folderelor de proiect, rulat în rețeaua voastră, doar în citire.</li>
+        <li>Identificarea automată a clientului, articolului, tipului de document și reviziei, din structura existentă.</li>
+        <li>Semnalarea problemelor: revizii multiple ale aceluiași document, duplicate, articole fără instrucțiuni, foldere în afara structurii, fișiere care nu sunt PDF.</li>
+        <li>Raport Excel cu situația actuală, discutat împreună.</li>
+        <li>Stabilirea variantei de instalare (pe NAS sau pe mini-PC), împreună cu colegul de IT.</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="ph">
+        <span class="n">2</span>
+        <div><h3>Planul de reorganizare</h3><div class="what">Pornind de la codurile și regulile de documente pe care le folosiți deja, pregătesc planul complet de trecere în structura nouă, pe care îl verificați și îl aprobați.</div></div>
+      </div>
+      <ul class="do">
+        <li>Preluarea codurilor și a regulilor voastre existente și transformarea lor în reguli pe care programul le aplică automat: formatul numelor, marcarea reviziei, locul documentelor eliberate și arhiva pentru reviziile vechi.</li>
+        <li>Completări doar acolo unde lipsește o regulă unitară, stabilite împreună cu voi.</li>
+        <li>Tabelul articol → documente, pentru documentele valabile la mai multe articole (de ex. aceeași ambalare pentru mai multe articole): pregătesc șablonul și îl preiau automat în aplicație, iar legăturile le completați voi, pentru că doar voi le cunoașteți.</li>
+        <li>Planul de reorganizare fișier cu fișier (locul actual → locul nou), generat automat, în Excel. Cazurile neclare sunt marcate, iar clarificarea lor o faceți voi.</li>
+        <li>Ajustarea planului după verificările voastre, până la aprobarea finală.</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="ph">
+        <span class="n">3</span>
+        <div><h3>Reorganizarea documentelor</h3><div class="what">Documentele sunt copiate în structura nouă, conform planului aprobat, cu verificarea fiecărui fișier. Structura actuală rămâne neschimbată.</div></div>
+      </div>
+      <ul class="do">
+        <li>Copiere de test pe un client pilot, verificată împreună înainte de restul.</li>
+        <li>Copierea tuturor documentelor în structura nouă, conform planului aprobat.</li>
+        <li>Verificarea fiecărui fișier copiat: trebuie să fie identic cu originalul.</li>
+        <li>Jurnal complet al copierii și raport final.</li>
+        <li>Structura actuală rămâne neatinsă: nu se șterge și nu se mută nimic.</li>
+        <li>Stabilirea zilei de trecere: din acea zi, documentele se publică doar în structura nouă, iar cea veche rămâne arhivă, doar în citire.</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="ph">
+        <span class="n">4</span>
+        <div><h3>Aplicația pentru tablete</h3><div class="what">Aplicația web internă prin care operatorii ajung de pe tabletă, în câteva atingeri, la documentele de care au nevoie. Rulează stabil, fără intervenții zilnice.</div></div>
+      </div>
+      <ul class="do">
+        <li>Arbore client → articol → documente și căutare după număr de articol, client sau tip de document.</li>
+        <li>Afișarea documentelor doar în citire, direct în aplicație, fără descărcarea lor pe tabletă.</li>
+        <li>Doar revizia eliberată: operatorul vede numai documentele publicate ca eliberate, după regula voastră de aprobare. Ciornele și reviziile arhivate nu apar. Dacă există două revizii eliberate ale aceluiași document, aplicația nu alege singură, ci semnalează situația responsabilului de calitate.</li>
+        <li>Acces doar la documentele de producție, fără acces la oferte, prețuri sau alte foldere.</li>
+        <li>Instalare în rețeaua voastră (pe NAS sau pe mini-PC), cu conexiune securizată HTTPS, pornire automată după repornire sau pană de curent și repornire automată la eroare.</li>
+        <li>Monitorizare automată, cu alertă pe email dacă aplicația nu răspunde.</li>
+        <li>Test la 1–2 posturi cu operatorii și ajustări după feedbackul lor.</li>
+        <li>Aplicația nu păstrează documente, doar le citește de pe server. Configurația ei e salvată și documentată, iar la nevoie aplicația se reinstalează pe alt echipament în aceeași zi.</li>
+        <li>Instruire, ghid scurt de utilizare și documentație pentru IT, inclusiv lista tehnologiilor și a licențelor folosite.</li>
+        <li>La predare primiți codul sursă, configurațiile, scripturile de instalare și documentația, cu dreptul permanent de a folosi și modifica aplicația în cadrul firmei, fără costuri recurente.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Total</h2>
+    <p class="sub">Preț estimat pentru întregul proiect. Suma exactă din fiecare interval o stabilim după diagnostic.</p>
+    <div class="total"><div class="tbl"><table>
+      <tr><th>Ce include</th><th><span class="lg">Varianta A · pe NAS</span><span class="sm">A<br>NAS</span></th><th><span class="lg">Varianta B · pe mini-PC</span><span class="sm">B<br>mini-PC</span></th></tr>
+      <tr><td>Prototip (MVP) pe o structură demonstrativă</td><td class="v">gratuit</td><td class="v">gratuit</td></tr>
+      <tr><td>1. Diagnosticul folderelor și raportul situației actuale</td><td class="v">✓</td><td class="v">✓</td></tr>
+      <tr><td>2. Planul de reorganizare, pe baza codurilor și regulilor voastre</td><td class="v">✓</td><td class="v">✓</td></tr>
+      <tr><td>3. Reorganizarea documentelor, fără ștergere, cu verificarea fiecărui fișier</td><td class="v">✓</td><td class="v">✓</td></tr>
+      <tr><td>4. Aplicația: arbore, căutare și doar revizia eliberată</td><td class="v">✓</td><td class="v">✓</td></tr>
+      <tr><td>Instalare securizată, pornire automată și monitorizare</td><td class="v">pe NAS</td><td class="v">pe mini-PC</td></tr>
+      <tr><td>Test la posturi, instruire și documentație pentru IT</td><td class="v">✓</td><td class="v">✓</td></tr>
+      <tr><td>Codul sursă și dreptul permanent de folosire</td><td class="v">✓</td><td class="v">✓</td></tr>
+      <tr><td>Garanție 30 de zile</td><td class="v">✓</td><td class="v">✓</td></tr>
+      <tr class="sum"><td>Total estimat</td><td class="v">3.500–3.700 €</td><td class="v">3.800–4.100 €</td></tr>
+    </table></div></div>
+    <p class="cap">Plata se face pe etape; tranșele se stabilesc la semnarea contractului. La varianta B, mini-PC-ul (aprox. 300–450 €) nu este inclus în preț.</p>
+    <div class="facts">
+      <div class="fact"><div class="k">Prototip</div><div class="v">1 săptămână</div></div>
+      <div class="fact"><div class="k">Durată proiect</div><div class="v">1–2 luni</div></div>
+      <div class="fact"><div class="k">Plată</div><div class="v">pe etape</div></div>
+    </div>
+    <div class="solo">
+      <div>
+        <h3>Doar diagnosticul</h3>
+        <p>Dacă preferați să începeți doar cu diagnosticul folderelor, îl puteți comanda separat. Primiți raportul complet al situației actuale, util și independent de restul proiectului. Dacă doriți să continuați, cei 500 € plătiți pentru diagnostic se scad din totalul proiectului.</p>
+      </div>
+      <b class="num">500 €</b>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recepție</h2>
+    <p class="sub">Aplicația se consideră predată când trec testele de mai jos, verificate împreună cu voi pe documentele reale.</p>
+    <div class="box">
+      <ul>
+        <li>Căutarea după articol afișează toate documentele lui.</li>
+        <li>Operatorul vede doar revizia eliberată.</li>
+        <li>Un document nou publicat apare în aplicație în cel mult 5 minute.</li>
+        <li>Documentele nu pot fi modificate sau șterse din aplicație.</li>
+        <li>După repornirea serverului, aplicația revine singură.</li>
+        <li>Dacă aplicația nu răspunde, alerta ajunge pe email.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Calendar</h2>
+    <p class="sub">Durata totală, de 1–2 luni, depinde de volumul de documente confirmat la diagnostic, de timpul necesar pentru verificarea și aprobarea planului de reorganizare și de accesul în infrastructura voastră.</p>
+    <div class="timeline">
+      <div class="tl"><span class="w">Înainte de start</span><span>Prototip gratuit pe o structură demonstrativă, prezentat în browser</span></div>
+      <div class="tl"><span class="w">Săptămâna 1</span><span>Etapa 1: diagnostic și alegerea variantei de instalare</span></div>
+      <div class="tl"><span class="w">Săptămânile 2–3</span><span>Etapa 2: planul de reorganizare și aprobarea lui</span></div>
+      <div class="tl"><span class="w">Săptămânile 3–4</span><span>Etapa 3: reorganizarea documentelor</span></div>
+      <div class="tl"><span class="w">Săptămânile 4–8</span><span>Etapa 4: aplicația, instalarea, test la posturi, instruire și predare</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>După predare</h2>
+    <p class="sub">Aplicația e construită să nu ceară intervenție umană decât pentru mentenanța programată.</p>
+    <div class="care">
+      <div class="box after">
+        <h3>Garanție inclusă</h3>
+        <div class="price-tag">30 de zile</div>
+        <p class="muted">După predare, defectele aplicației se remediază gratuit. Nu intră aici modificările cerute ulterior și problemele de rețea sau de infrastructură.</p>
+      </div>
+      <div class="box">
+        <h3>Mentenanță lunară (opțional)</h3>
+        <div class="price-tag num">100 € / lună</div>
+        <ul>
+          <li>Monitorizare automată: sunt anunțat dacă aplicația nu răspunde.</li>
+          <li>Intervenție în caz de nefuncționare cauzată de aplicație, de regulă în 1–2 zile lucrătoare.</li>
+          <li>Actualizări de securitate și o verificare periodică a funcționării.</li>
+          <li>Până la 2 ore pe lună pentru intervenții și ajustări mici. Ce depășește se facturează la 30 € / oră.</li>
+          <li>Problemele cauzate de rețea, NAS sau alte schimbări în infrastructură se tratează separat, la 30 € / oră.</li>
+          <li>Se poate opri oricând, cu o lună de preaviz.</li>
+        </ul>
+        <p class="alt"><b>Alternativ, fără abonament:</b> intervențiile se fac la cerere, la <b>30 € / oră</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce e nevoie de la voi și ce nu e inclus</h2>
+    <div class="lists">
+      <div class="box">
+        <h3>De la voi</h3>
+        <ul>
+          <li>O discuție scurtă cu colegul de IT și alegerea variantei de instalare.</li>
+          <li>Accesul necesar la NAS, acordat de IT (doar citire pentru aplicație).</li>
+          <li>Codurile și regulile de documente pe care le folosiți deja.</li>
+          <li>Verificarea și aprobarea planului de reorganizare.</li>
+          <li>Clarificarea cazurilor marcate „de verificat” (de exemplu documente fără revizie sau fără articol în nume).</li>
+          <li>Completarea legăturilor dintre articole și documentele comune, pe șablonul pregătit de mine.</li>
+          <li>Spațiu liber pe NAS pentru structura nouă.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Nu e inclus</h3>
+        <ul>
+          <li>La varianta B, mini-PC-ul (aprox. 300–450 €).</li>
+          <li>Infrastructura de rețea: acoperirea WiFi în hală, accesul de la distanță (VPN).</li>
+          <li>Documentele care nu sunt PDF (Word, Excel, desene CAD): conversia lor se evaluează separat după diagnostic.</li>
+          <li>Modificări cerute după aprobarea structurii și funcții suplimentare (confirmare de citire, istoric de acces, legătura cu programul de comenzi): se ofertează separat.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cap">Puteți opri proiectul după diagnostic, fără alte obligații. Orice lucrare suplimentară se execută doar cu acordul vostru scris, dat înainte.</p>
+  </section>
+
+
+  <footer>
+    <div>Ofertă pregătită de <b>Flavius Vranău</b> · dezvoltare aplicații web și automatizări</div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ofertă Stettler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --ground:#F3F5F6; --paper:#FFFFFF; --ink:#15212B; --muted:#5B6873; --line:#D6DDE2;
+  --free:#1E7A46; --free-ink:#FFFFFF; --yellow:#E0B020;
+  --accent:#1B5FA8; --accent-soft:#E3EDF8; --ok:#1E7A46; --ok-soft:#E1F2E8;
+  --warn:#8A5A00; --warn-soft:#F7ECD2;
+  --display:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme:dark;
+    --free:#1F6B43; --free-ink:#F2FFF7; --yellow:#C9A227;
+    --ground:#0F151A; --paper:#172027; --ink:#E6ECF0; --muted:#9AA8B3; --line:#2B3843;
+    --accent:#7DB3EE; --accent-soft:#1B2E44; --ok:#6CCB94; --ok-soft:#163323;
+    --warn:#E8B85A; --warn-soft:#3A2E12;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;padding:0 16px}
+.wrap{max-width:980px;margin:0 auto;padding-block:48px 72px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* antet */
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;padding-bottom:28px;border-bottom:2px solid var(--ink)}
+.top h1{font-size:40px;font-weight:700;margin:10px 0 8px;max-width:620px}
+.top .lead{color:var(--muted);max-width:600px;font-size:16.5px}
+.meta{display:grid;gap:6px;font-size:13.5px;min-width:220px}
+.meta div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.meta b{font-weight:600}
+.client{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.client img{height:34px;width:auto;max-width:160px;background:#fff;padding:4px 8px;border-radius:4px}
+
+section{margin-top:52px}
+section > h2{font-size:28px;font-weight:700;margin-bottom:6px}
+section > .sub{color:var(--muted);margin-bottom:20px;max-width:680px}
+
+/* casete */
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.box h3{font-size:19px;margin-bottom:8px}
+.box ul{list-style:none;display:grid;gap:8px}
+.box li{padding-left:22px;position:relative}
+.box li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--muted)}
+.box.after li::before{background:var(--ok)}
+.box.after{border-color:var(--ok)}
+
+/* mini macheta */
+.mock{margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.mock .bar{display:flex;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+.mock .bar .t{font-family:var(--display);font-weight:700;font-size:17px;white-space:nowrap}
+.mock .bar .s{flex:1;border:2px solid var(--line);border-radius:8px;padding:6px 10px;color:var(--muted);font-size:13.5px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.mock .body{display:grid;grid-template-columns:240px 1fr;min-height:210px}
+.mock .tree{border-right:1px solid var(--line);padding:10px;font-size:13.5px;display:grid;gap:4px;align-content:start}
+.mock .tree .c{font-weight:600}
+.mock .tree .a{padding-left:14px;font-family:var(--mono);font-size:12.5px}
+.mock .tree .a.sel{background:var(--accent-soft);border-radius:6px;padding:4px 8px 4px 14px}
+.mock .tree .d{margin-left:22px;border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:12.5px}
+.mock .tree .d.sel{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.mock .doc{padding:14px 16px}
+.mock .doc .head{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.pill{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.ro{border:1px solid var(--line);color:var(--muted)}
+.mock .page{border:1px solid var(--line);border-radius:4px;height:130px;background:repeating-linear-gradient(0deg,transparent 0 17px,var(--line) 17px 18px);opacity:.7}
+.cap{font-size:13px;color:var(--muted);margin-top:8px}
+
+/* faze */
+.phase{background:var(--paper);border:1px solid var(--line);border-radius:10px;margin-bottom:14px;overflow:hidden}
+.phase .ph{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+.phase .n{font-family:var(--display);font-weight:700;font-size:30px;color:var(--accent);line-height:1}
+.phase h3{font-size:21px}
+.phase .what{color:var(--muted);font-size:14px;margin-top:2px}
+.phase .price{text-align:right;white-space:nowrap}
+.phase .price b{display:block;font-family:var(--display);font-size:26px;font-weight:700}
+.phase .price span{font-size:12.5px;color:var(--muted)}
+.phase .price .ab{display:grid;grid-template-columns:auto auto;gap:0 10px;align-items:baseline;justify-content:end}
+.phase .price .ab b{font-size:22px}
+.phase .price .ab i{font-style:normal;font-size:12px;font-weight:600;color:var(--accent)}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:9px 20px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.h{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--muted);width:110px}
+.tag{display:inline-block;font-size:11px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:0 6px;margin-left:4px}
+
+/* variante */
+.variants{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vcard{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.vcard .vh{display:flex;align-items:baseline;gap:10px}
+.vcard .letter{font-family:var(--display);font-weight:700;font-size:34px;color:var(--accent);line-height:1}
+.vcard h3{font-size:21px}
+.vcard dl{display:grid;gap:10px}
+.vcard dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.vcard dd{margin-top:2px}
+.vcard .foot{margin-top:auto;border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.vcard .foot b{font-family:var(--display);font-size:26px}
+.vcard .foot span{font-size:13px;color:var(--muted)}
+
+/* total */
+.total{background:var(--paper);border:2px solid var(--ink);border-radius:10px;overflow:hidden}
+.total table td,.total table th{padding:11px 20px}
+.total th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:right}
+.total th:first-child{text-align:left}
+.total td.v{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600}
+.total tr.tot td{border-top:2px solid var(--line);font-weight:600}
+.total tr.sum td{border-top:2px solid var(--ink);font-family:var(--display);font-size:22px;font-weight:700}
+.total tr.sum td.v{font-size:28px;color:var(--accent)}
+.solo{margin-top:14px;background:var(--paper);border:1px dashed var(--accent);border-radius:10px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.solo h3{font-size:19px;margin-bottom:4px}
+.solo p{color:var(--muted);font-size:14.5px;max-width:620px}
+.solo > b{font-family:var(--display);font-size:30px;color:var(--accent);white-space:nowrap}
+.short-steps{list-style:none;counter-reset:st -1;display:grid;gap:10px}
+.short-steps li{counter-increment:st;display:grid;grid-template-columns:auto 1fr;gap:2px 14px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.short-steps li::before{content:counter(st);grid-row:span 2;font-family:var(--display);font-weight:700;font-size:26px;color:var(--accent);line-height:1.1;min-width:18px}
+.short-steps li b{font-size:16px}
+.short-steps li span{color:var(--muted);font-size:14.5px}
+.vcard p{font-size:14.5px}
+.more{margin-top:40px;text-align:center}
+.more a{display:inline-block;border:2px solid var(--accent);color:var(--accent);border-radius:10px;padding:12px 22px;font-weight:600;text-decoration:none}
+.more a:hover{background:var(--accent-soft)}
+.more.top{margin:0 0 18px;text-align:left}
+.more.top a{border:0;padding:0;font-size:14px}
+.free{margin-top:36px;background:var(--free);color:var(--free-ink);border-radius:14px;padding:28px 30px;display:grid;gap:12px;box-shadow:0 14px 30px -18px rgba(0,0,0,.45)}
+.free-tag{justify-self:start;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.free h2{font-size:34px;color:var(--free-ink);margin:0}
+.free p{font-size:16.5px;max-width:680px}
+.free-steps{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.free-steps span{background:rgba(255,255,255,.16);border-radius:8px;padding:8px 12px;font-weight:600;font-size:14.5px}
+.short-steps li:first-child{border-color:var(--ok);background:var(--ok-soft)}
+.mvp{border:3px solid var(--ok)!important;background:var(--ok-soft)!important}
+.mvp .eyebrow{color:var(--ok);font-size:13px}
+.mvp-facts li{background:var(--paper)!important}
+.mvp-facts b{color:var(--ok)!important}
+.vcard .foot b.num{font-size:24px}
+.range{font-size:16.5px;margin:-4px 0 18px}
+.range b{color:var(--accent)}
+.factors{list-style:none;display:grid;gap:6px;margin:0 0 18px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 18px}
+.factors li{position:relative;padding-left:22px;font-size:14.5px}
+.factors li::before{content:"";position:absolute;left:4px;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+.ftbl{background:var(--paper);border:1px solid var(--line);border-radius:10px;margin-bottom:16px}
+.ftbl th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ftbl td:first-child{font-weight:600;white-space:nowrap}
+@media (max-width:760px){.solo{flex-direction:column;align-items:flex-start}}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.fact .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.fact .v{font-family:var(--display);font-size:22px;font-weight:700;margin-top:2px}
+
+/* calendar */
+.timeline{display:grid;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tl{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:12px 20px;border-bottom:1px solid var(--line)}
+.tl:last-child{border-bottom:0}
+.tl .w{font-weight:600;font-variant-numeric:tabular-nums}
+
+/* mentenanta */
+.care{display:grid;grid-template-columns:1fr 1.4fr;gap:16px}
+.care .alt{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+.care .alt b{color:var(--ink)}
+.care .price-tag{font-family:var(--display);font-size:30px;font-weight:700;color:var(--accent);line-height:1.1;margin:4px 0 6px}
+
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.note{background:var(--warn-soft);border:3px solid var(--yellow);border-radius:10px;padding:18px 22px;margin-top:16px}
+.note b{color:var(--warn)}
+
+footer{margin-top:56px;border-top:2px solid var(--ink);padding-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+footer b{color:var(--ink)}
+
+.mvp{background:var(--paper);border:2px solid var(--accent);border-radius:12px;padding:24px 26px;display:grid;gap:14px}
+.mvp h2{font-size:28px;margin-top:4px}
+.mvp h3{font-size:18px;margin-bottom:4px}
+.mvp-facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.mvp-facts li{background:var(--accent-soft);border-radius:8px;padding:8px 12px;font-size:14px}
+.mvp-facts b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.phase .ph{border-bottom:0}
+.phase ul.do{list-style:none;display:grid;gap:8px;border-top:1px solid var(--line);padding:14px 20px 16px}
+.phase ul.do li{position:relative;padding-left:24px;font-size:14.5px}
+.phase ul.do li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--accent);font-weight:700}
+@media (max-width:760px){
+  .free{padding:22px 18px}
+  .free h2{font-size:27px}
+  .top h1{font-size:31px}
+  .twocol,.lists,.facts,.variants,.care{grid-template-columns:1fr}
+  .mvp{padding:18px}
+  .mock .body{grid-template-columns:1fr}
+  .mock .tree{border-right:0;border-bottom:1px solid var(--line)}
+  .phase .ph{grid-template-columns:auto 1fr}
+  .phase .price{grid-column:1 / -1;text-align:left}
+  .phase .price .ab{justify-content:start}
+  .tl{grid-template-columns:1fr;gap:2px}
+  td,th{padding:9px 14px}
+  .total table td,.total table th{padding:10px 12px}
+}
+@media print{
+  body{background:#fff;padding:0}
+  .wrap{padding-block:0}
+  .phase,.vcard,.box{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div>
+      <div class="client">
+        <img src="https://www.stettlertech.ro/wp-content/uploads/2024/03/Logo-1.png" alt="Stettler.Tech" onerror="this.remove()">
+      </div>
+      <div class="eyebrow">Ofertă de proiect</div>
+      <h1>Documentele de producție pe tableta operatorului</h1>
+      <p class="lead">Instrucțiunile de lucru, de verificare, de ambalare și desenele, găsite în câteva atingeri, mereu în revizia eliberată. Documentele rămân pe serverul firmei, fără să fie mutate sau șterse.</p>
+    </div>
+    <div class="meta">
+      <div><span class="muted">Pentru</span><b>Stettler Tech SRL, Bistrița</b></div>
+      <div><span class="muted">Pregătită de</span><b>Flavius Vranău</b></div>
+      <div><span class="muted">Data</span><b class="num">28.09.2026</b></div>
+      <div><span class="muted">Valabilă</span><b class="num">30 de zile</b></div>
+    </div>
+  </header>
+
+  <section class="free">
+    <span class="free-tag">Gratuit · fără obligații</span>
+    <h2>Vedeți aplicația funcționând înainte să decideți</h2>
+    <p>În <b>1 săptămână</b> construiesc un prototip al aplicației, pe o structură de foldere demonstrativă, și vi-l prezint. Nu costă nimic și nu am nevoie de acces la datele sau la infrastructura voastră.</p>
+    <div class="free-steps"><span>1. Vedeți prototipul</span><span>2. Decideți</span><span>3. Abia apoi începem proiectul</span></div>
+  </section>
+
+  <section>
+    <h2>Ce primiți</h2>
+    <div class="box after">
+      <ul>
+        <li>O singură structură de foldere, ordonată, pornind de la codurile și regulile voastre.</li>
+        <li>Pe tabletă: client → articol → documente și căutare după număr de articol.</li>
+        <li>Operatorul vede doar revizia eliberată. Reviziile vechi rămân în arhivă, pentru trasabilitate.</li>
+        <li>Documentele rămân pe serverul vostru: acces doar în citire, doar în rețeaua internă.</li>
+        <li>La predare: codul sursă, documentația și dreptul permanent de folosire.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cum lucrăm</h2>
+    <ol class="short-steps">
+      <li><b>Prototip gratuit</b><span>În 1 săptămână vedeți în browser cum funcționează aplicația, pe o structură demonstrativă.</span></li>
+      <li><b>Diagnostic</b><span>Analizăm folderele, doar în citire, și primiți raportul situației actuale.</span></li>
+      <li><b>Planul de reorganizare</b><span>Pe baza regulilor voastre, planul fișier cu fișier, pe care îl aprobați.</span></li>
+      <li><b>Reorganizare</b><span>Documentele sunt copiate în structura nouă, verificate. Nu se șterge nimic.</span></li>
+      <li><b>Aplicația</b><span>Instalare securizată în rețeaua voastră, test la posturi, instruire și predare.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Preț</h2>
+    <div class="variants">
+      <div class="vcard">
+        <div class="vh"><span class="letter">A</span><h3>Pe NAS-ul existent</h3></div>
+        <p class="muted">Dacă NAS-ul permite rularea aplicației. Fără echipament nou.</p>
+        <div class="foot"><span>Total estimat</span><b class="num">3.500–3.700 €</b></div>
+      </div>
+      <div class="vcard">
+        <div class="vh"><span class="letter">B</span><h3>Pe un mini-PC dedicat</h3></div>
+        <p class="muted">Dacă preferați să nu instalați nimic pe NAS. Mini-PC-ul (aprox. 300–450 €) nu este inclus în preț.</p>
+        <div class="foot"><span>Total estimat</span><b class="num">3.800–4.100 €</b></div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="k">Durată</div><div class="v">1–2 luni</div></div>
+      <div class="fact"><div class="k">Doar diagnosticul</div><div class="v num">500 €</div></div>
+      <div class="fact"><div class="k">Plată</div><div class="v">pe etape</div></div>
+    </div>
+    <p class="cap">Suma exactă din fiecare interval o stabilim după diagnostic. Diagnosticul se poate comanda și separat, la 500 €. Dacă doriți să continuați, cei 500 € plătiți pentru diagnostic se scad din totalul proiectului. Puteți opri proiectul după diagnostic, fără alte obligații.</p>
+  </section>
+
+  <section>
+    <h2>După predare</h2>
+    <div class="twocol">
+      <div class="box after">
+        <h3>Garanție 30 de zile</h3>
+        <p class="muted">Defectele aplicației se remediază gratuit.</p>
+      </div>
+      <div class="box">
+        <h3>Mentenanță 100 € / lună (opțional)</h3>
+        <p class="muted">Monitorizare, actualizări și până la 2 ore pe lună pentru intervenții. Alternativ, fără abonament: 30 € / oră, la cerere.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="more"><a href="detaliata/">Vezi oferta detaliată →</a></div>
+
+  <footer>
+    <div>Ofertă pregătită de <b>Flavius Vranău</b> · dezvoltare aplicații web și automatizări</div>
+  </footer>
+
+</div>
+</body>
+</html>
